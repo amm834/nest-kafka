@@ -9,7 +9,13 @@ async function bootstrap() {
         transport: Transport.KAFKA,
         options: {
             client: {
-                brokers: ['localhost:9092'],
+                brokers: ['relevant-polecat-12912-us1-kafka.upstash.io:9092'],
+                sasl: {
+                    mechanism: 'scram-sha-256',
+                    username: 'cmVsZXZhbnQtcG9sZWNhdC0xMjkxMiR3Bip8PDYHanESs0ZUmBfI5YdlSK5qxak',
+                    password: 'NDNiYThjYzgtYjk2Yy00ZGYwLWJhOGUtNTZhNWRkN2IxMTc3',
+                },
+                ssl: true,
             },
             consumer: {
                 groupId: 'auth-consumer'
